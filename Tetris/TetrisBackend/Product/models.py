@@ -27,6 +27,10 @@ class SalesMan(models.Model):
     countofmany = models.CharField("CountOfMoney", max_length = 200)
     descript = models.TextField("Descript", max_length=300) 
     mail = models.EmailField("Mail", max_length = 40)
+    phone = models.CharField("phone", max_length = 11, default = '')
+    password = models.CharField("Password", max_length = 15, default= "1111")
+    salesman_img = models.ImageField(upload_to='images/', blank=True, null = True, default = 'use.jpeg')
+    user_img = models.ImageField(upload_to='images/', blank=True, null = True, default = 'USERS.png')
     grade = models.CharField("greade", max_length = 1)
     
     def __str__(self):
