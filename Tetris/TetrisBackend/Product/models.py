@@ -24,6 +24,7 @@ class ProductModel(models.Model):
 # Create your models here.
 class SalesMan(models.Model):
     name = models.CharField("Salesman Name", max_length = 30)
+    salerName = models.CharField(" Name", max_length = 30, default='')
     countofmany = models.CharField("CountOfMoney", max_length = 200)
     descript = models.TextField("Descript", max_length=300) 
     mail = models.EmailField("Mail", max_length = 40)
@@ -32,7 +33,7 @@ class SalesMan(models.Model):
     salesman_img = models.ImageField(upload_to='images/', blank=True, null = True, default = 'use.jpeg')
     user_img = models.ImageField(upload_to='images/', blank=True, null = True, default = 'USERS.png')
     grade = models.CharField("greade", max_length = 1)
-    
+    indif = models.CharField("Индификатор", max_length= 100, default='')
     def __str__(self):
         return self.name
     
@@ -42,7 +43,7 @@ class SalesMan(models.Model):
 
 
 class Snikers(models.Model):
-    size35 = models.CharField("count size", max_length = 10)
+    indif = models.CharField("Индификатор", max_length= 100, default='')
     size36 = models.CharField("count size", max_length = 10)
     size37 = models.CharField("count size", max_length = 10)
     size38 = models.CharField("count size", max_length = 10)
@@ -59,6 +60,7 @@ class Snikers(models.Model):
         verbose_name_plural = 'SnikersSizes'
     
 class cloth(models.Model):
+    indif = models.CharField("Индификатор", max_length= 100, default='')
     s = models.CharField("count size", max_length = 10)
     m = models.CharField("count size", max_length = 10)
     l = models.CharField("count size", max_length = 10)
@@ -79,3 +81,12 @@ class CustomUser(AbstractUser):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+
+class CountProduct(models.Model):
+    count = models.CharField('Count', max_length= 100)
+    indif = models.CharField("Индификатор", max_length= 100, default='')
+
+    class Meta:
+        verbose_name = 'Count'
+        verbose_name_plural = 'Counts'
+    

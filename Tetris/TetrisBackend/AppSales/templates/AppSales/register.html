@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'AppSales/register.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="back"></div>
+        <div class="block-avtoriz">
+            <div class="name-form"><h1>Sing in</h1></div>
+            <form action="" class="form">
+
+                <div class="input-block">
+                    <ion-icon class="icon" name="pricetag"></ion-icon>
+                    <div class="input">
+                        <input type="text" placeholder="Your ShopName">
+                    </div>
+                </div>
+                <div class="input-block">
+                    <ion-icon class="icon" name="person"></ion-icon>
+                    <div class="input">
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                </div>
+                <div class="input-block">
+                    <ion-icon class="icon"  name="call"></ion-icon>
+                    <div class="input"> 
+                        <input type="text" placeholder="Enter your phone">
+                    </div>
+                </div>
+                <div class="input-block">
+                    <ion-icon class="icon"  name="mail"></ion-icon>
+                    <div class="input"> 
+                        <input type="text" placeholder="Enter your mail">
+                    </div>
+                </div>
+                <div class="input-block">
+                    <ion-icon class="icon"  name="eye"></ion-icon>
+                    <div class="input"> 
+                        <input type="text" placeholder="Password">
+                    </div>
+                </div>
+                <div class="input-block">
+                    <ion-icon class="icon"  name="eye"></ion-icon>
+                    <div class="input"> 
+                        <input type="text" placeholder="Repassword">
+                    </div>
+                </div>
+
+                <div class="textarea-block">
+                    <ion-icon name="copy"></ion-icon>
+                    <div class="textarea">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Enter descript"></textarea>
+                    </div>
+                </div>
+                <div class="imageLoad">
+
+                    <div class="load-img">
+                        <h1>Shop-logo</h1><br>
+                        <div class="load">
+                            <img class="ImageSrc" id="1" src="" alt="">
+                            <input type="file" accept="image/png, image/jpeg" class="avatar" id="1">
+                        </div>
+                    </div>
+    
+                    <div class="load-img">
+                        <h1>Shop-Header</h1><br>
+                        <div class="load">
+                            <img class="ImageSrc" id="2" src="" alt="">
+                            <input type="file" accept="image/png, image/jpeg" class="avatar" id="2">
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="block-btn"><button type="submit">Sing in</button></div>
+                <a class="href" href="{% url 'avtoriz' %}" color="red"> Log in?</a>
+            </form>
+        </div>
+    </div>
+    
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script> 
+    <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js" ></script>
+
+    <script>
+        const image = document.querySelectorAll('.ImageSrc');
+
+        document.querySelectorAll('.avatar').forEach(input => {
+            input.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imageSrc = e.target.result;
+                    const imageInputId = input.getAttribute('id');
+                    image.forEach(img => {
+                        if (img.getAttribute('id') == imageInputId) {
+                            img.src = imageSrc;
+                        }
+                    })
+                };
+
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+</body>
+</html>

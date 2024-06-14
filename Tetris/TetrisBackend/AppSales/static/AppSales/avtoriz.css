@@ -1,0 +1,110 @@
+body{
+    width: auto;
+    height: 98vh;
+    background-color: black;
+}
+.block-avtoriz{
+    width: 40%;
+    min-width: 340px;
+    height: auto;
+    min-height: 500px;
+    background-color: rgb(14, 13, 13);
+    border-radius: 25px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index:99;
+}
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 0;
+}
+.main{
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.name-form{
+    width: 100%;
+    text-align: center;
+    height: 60px;
+}
+
+.name-form h1{
+    margin: auto;
+    padding: 0;
+    color: white;
+    font-size: 40px;
+    font-family: fantasy;
+}
+.form{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.input-block{
+    display: flex;
+    width: 100%;
+    color: aliceblue;
+    justify-content: center;
+    font-size: 40px;
+}
+.input{
+    width: 230px;
+    margin-left: 20px;
+    height: 40px;
+    border-bottom: solid 2px white;
+}
+.input input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+.block-btn{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+.block-btn button{
+    margin: auto;
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    background-color: #58ED4B;
+    border-radius: 15px;
+    border: #58ED4B solid 2px;
+    transition: all 0.5s ease;
+}
+.block-btn button:hover{
+    background-color: rgb(14, 13, 13);
+    color: #58ED4B;
+}
+
+.href{
+    text-decoration: none;
+    color:#58ED4B;
+    transition: all 0.5s ease;
+}
+
+.href:hover{
+    color:red;
+}

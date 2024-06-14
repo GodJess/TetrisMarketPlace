@@ -1,0 +1,528 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'AppSales/salesApp.css' %}">
+    <title>Tetris</title>
+</head>
+<body>
+    <div class="main">
+        {% if dataUser.name != ''%}
+
+
+        <div class="block-load-img">
+            <div class="block-load-main">
+                <form id="load-form" class="load-form">
+                    {% csrf_token %}
+                    <div class="load-img-main">
+                        +
+                    <input type="file" class="loadImg" name="loadImg">
+                    </div>
+                    <div class="button-load"><button class="LoadButt" type="button">Load image</button></div>
+                </form>
+                <h1 class="close"><ion-icon name="close"></ion-icon></h1>
+            </div>
+        </div>
+
+        <div class="block-menu-settings">
+            <div class="menu-header">
+                <div class="dataUser-logo">
+                    <img class="dataUser-logog" src="{{dataUser.logo}}" alt="">
+                    <div class="add-logo"><ion-icon name="camera"></ion-icon></div>
+                </div>
+                
+                <ion-icon class="icon-menu" name="menu"></ion-icon>
+            </div>
+            <div class="main-menu-block">
+                <div class="info-about-saler" id="1">
+                    My Data <ion-icon class="play-data" name="play"></ion-icon>
+                    <div class="info-block-opt" id="1">
+                        <form class="info-form" action="">
+                            <input class="info-input" type="text" value="Arnold">
+                            <input class="info-input" type="text" value="89315911751">
+                            <input class="info-input" type="text" value="ssdzteshdt@mail.ru">
+                            <input class="info-input" type="password" value="12345678">
+                            <button class="info-button">Change</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="info-about-saler" id="2">
+                    My sales <ion-icon class="play-data" name="play"></ion-icon>
+                    <div class="info-block-opt" id="2">
+                        <div class="my-sales"><h1><ion-icon name="wallet"></ion-icon> 23456.00 $</h1></div>
+                        <div class="my-sales"><h1><ion-icon name="people"></ion-icon> 68</h1></div>
+                    </div>
+                </div>
+
+                <div class="info-about-saler" id="3">
+                    My taxes <ion-icon class="play-data" name="play"></ion-icon>
+                    <div class="info-block-opt" id="3">
+                        <form class="info-forms" action="">
+                            <input class="tax-input" type="text" value="16.13">
+                            <button class="tax-button" class="">To pay</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="info-about-saler" id="4">
+                    Tetris News <ion-icon class="play-data" name="play"></ion-icon>
+                    <div class="info-block-opt" id="4">
+                        <div class="linkto"><a href="#"><img src="https://icon-icons.com/icons2/2148/PNG/512/telegram_icon_131945.png" alt=""> Telegram</a></div>
+                        <div class="linkto"><a href="#"><img src="https://icon-icons.com/icons2/4029/PNG/512/twitter_x_new_logo_x_rounded_icon_256078.png" alt=""> Twiter</a></div>
+                        <div class="linkto"><a href="#"><img src="https://icon-icons.com/icons2/2428/PNG/512/instagram_black_logo_icon_147122.png" alt=""> Instagram</a></div>
+                    </div>
+                </div>
+
+                <div class="info-about-saler" id="5">
+                    Other <ion-icon class="play-data" name="play"></ion-icon>
+                    <div class="info-block-opt">
+                    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+                <div class="logo" style="background-image: url('{{dataUser.header}}')">
+                    <div class="ShopName">
+                        <h1>{{dataUser.shopName}}</h1>
+                    </div>
+                </div>
+                
+                <div class="block-widgets">
+                    <div class="user-info">
+                        <div class="user">
+                            <div class="img-block"><img class="img-dataUser-logo" src="{{dataUser.logo}}" alt=""></div>
+                            <div class="info">
+                                <div class="name">{{dataUser.name}}</div>
+                                <div class="capital">$ {{dataUser.check}}</div>
+                            </div>
+                        </div>
+                        <div class="reting">
+                            <ion-icon class="star"  name="star"></ion-icon>
+                            <ion-icon class="star"  name="star"></ion-icon>
+                            <ion-icon class="star"  name="star"></ion-icon>
+                            <ion-icon  class="star"  name="star"></ion-icon>
+                            <ion-icon class="star"  name="star"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="widg">
+                        <div class="widg-block">
+                            <div class="linkTo">
+                                <a class="a settings" href="#"> <ion-icon class="SettIcon" name="settings"></ion-icon>Settings<ion-icon class="Arrow" name="arrow-forward"></ion-icon></a>
+                            </div>
+                            <div class="linkTo">
+                                <a class="a" href="#"> <ion-icon class="SettIcon" name="chatbubble-ellipses"></ion-icon>Support<ion-icon class="Arrow" name="arrow-forward"></ion-icon></a>
+                            </div>
+                        </div>
+                        <div class="widg-block">
+                            <div class="linkTo">
+                                <a class="a" href="#analitics"> <ion-icon class="SettIcon" name="pulse"></ion-icon>Analitic<ion-icon class="Arrow" name="arrow-forward"></ion-icon></a>
+                            </div>
+                            <div class="linkTo">
+                                <a class="a" href="#Ad"> <ion-icon class="SettIcon" name="add-circle"></ion-icon>Add prod<ion-icon class="Arrow" name="arrow-forward"></ion-icon></a>
+                            </div>
+                        </div>
+                        <div class="widg-block">
+                            <div class="linkTo">                
+                                <a class="a" href="#reviews"> <ion-icon class="SettIcon" name="ribbon"></ion-icon> Reviews<ion-icon class="Arrow" name="arrow-forward"></ion-icon></a>
+                            </div>
+                            <div class="linkTo">
+                                <a class="a" href="{% url 'logOut' %}"> <ion-icon class="SettIcon" name="log-out"></ion-icon>Log out<ion-icon class="Arrow" name="arrow-forward"></ion-icon></a>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div class="Analitic-header">
+                    <h1>Analitic</h1>
+                </div>
+                <div class="block-analitics" id="analitics">
+                        <div class="dia1">
+                            <canvas id="MyChart"></canvas>
+                        </div>
+                        <div class="dia2">
+                            <canvas id ="Chart"></canvas>
+                        </div>
+                </div>
+
+                <div class="Analitic-header">
+                    <h1>My Catalog</h1>
+                </div>
+                <div class="catalog">
+                    <div class="block-catalog" id="catalog">
+                        {% comment %} карты товаров {% endcomment %}
+                    </div>
+                </div>
+                
+                <div class="Analitic-header">
+                    <h1>Reviews</h1>
+                </div>
+
+                <div class="block-reviews" id="reviews">
+                    <div class="reviews">
+
+                        <div class="bl">
+                            <div class="block-user-reviews">
+                                <div class="reviews-main">
+                                    <img src="{% static 'AppSales/Ellipse 2 (1).png' %}" alt="">
+                                    <div class="comment">
+                                        <p>
+                                        Хороший магазин, отличные цены!
+                                        </p>
+                                        <div class="estimation">
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon  class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bl">
+                            <div class="block-user-reviews">
+                                <div class="reviews-main">
+                                    <img src="{% static 'AppSales/Ellipse 2 (1).png' %}" alt="">
+                                    <div class="comment">
+                                        <p>
+                                            Более менее хорошее качество!
+                                        </p>
+                                        <div class="estimation">
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star" name="star-half"></ion-icon>
+                                            <ion-icon class="star" name="star-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bl">
+                            <div class="block-user-reviews">
+                                <div class="reviews-main">
+                                    <img src="{% static 'AppSales/Ellipse 2 (1).png' %}" alt="">
+                                    <div class="comment">
+                                        <p>
+                                            Подделка
+                                        </p>
+                                        <div class="estimation">
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star"  name="star"></ion-icon>
+                                            <ion-icon class="star" name="star-outline"></ion-icon>
+                                            <ion-icon class="star" name="star-outline"></ion-icon>
+                                            <ion-icon class="star" name="star-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="Analitic-header">
+                    <h1>Add product</h1>
+                </div>
+                
+                <div class="block-add" id="Ad">
+                    <form id="addProductForm" method="post" class="form" enctype="multipart/form-data">
+                        <h1 class="Perror ">Incorrect data</h1>
+                        {% csrf_token %}
+                        <div class="main-info">
+                            <input class="prod_name" type="text" name="prod_name" placeholder="Enter name">
+                            <input class="prod_price" type="text" name="prod_price" placeholder="Enter price">
+                            <input class="prod_discount" type="text" name="prod_discount" placeholder="Enter discount">
+                        </div>
+                        <div class="block-description">
+                            <textarea class="prod_desc" name="prod_desc" id="" cols="30" rows="10" placeholder="Enter description"></textarea>
+                        </div>
+                        <div class="add-photo">
+                            <div class="opt">
+                                <input class="ImageSrc" id="1" type="image" src="" alt="" placeholder="+">
+                                <input name="img1" type="file" class="load avatar img1" id="1" name="avatar" accept="image/png, image/jpeg">
+                            </div>
+                            <div class="opt">
+                                <input class="ImageSrc"  id="2" type="image" src="" alt="" placeholder="+">
+                                <input name="img2" type="file" class="load avatar img2" id="2" name="avatar" accept="image/png, image/jpeg">
+                            </div>
+                            <div class="opt">
+                                <input class="ImageSrc" id="3" type="image" src="" alt="" placeholder="+">
+                                <input name="img3" type="file" class="load avatar img3" id="3" name="avatar" accept="image/png, image/jpeg">
+                            </div>
+                            
+                        </div>
+                        <div class="add-date">
+                            <div class="date">
+                                <input class="prod_date" type="date" name="prod_date">
+                            </div>
+                            <div class="category">
+                                <select class="prod_category" name="prod_category" id="selector">
+                                    <option class="GetOptions" value="snikers">Sneakers</option>
+                                    <option class="GetOptions" value="shoes">Shoes</option>
+                                    <option class="GetOptions" value="product">Product</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="count-product">
+                            <div class="ell">
+                                <input type="count" placeholder="36">
+                            </div>
+                            
+                            <div class="ell">
+                                <input type="count" placeholder="37">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="38">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="39">
+                            </div>                    
+                            <div class="ell">
+                                <input type="count" placeholder="40">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="41">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="42">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="43">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="44">
+                            </div>
+                            <div class="ell">
+                                <input type="count" placeholder="45">
+                            </div>
+                        </div>
+                        <div class="button-blk">
+                            <button type="button" class="btn">Add prod</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="advert">
+                    <div class="Advert-header">
+                        <h1>Advertisement</h1>
+                    </div>
+                    <div class="advert-img">
+                        <img src="{% static 'AppSales/Frame 32.png' %}" alt="">
+                        <img src="{% static 'AppSales/Frame 34.png' %}" alt="">
+                        <img src="{% static 'AppSales/Frame 62.png' %}" alt="">
+                    </div>
+                </div>
+
+                <footer>
+                    <div class="footer-info">
+                        <h3>Welcome to Tetris Store</h3>
+                        <p>Tetris is a unique platform designed for sellers to streamline their sales process.</p>
+                    </div>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+        {% else %}
+            <div class="BadReq" >
+                <h1>You are not authorized, <a class="href" href="{% url 'avtoriz' %}" >Log in</a></h1>
+            </div>
+        {% endif %}
+    </div>
+
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script> 
+    <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'AppSales/salesman.js'%}"></script>
+    <script src="{% static 'AppSales/loadImg.js'%}"></script>
+    <script>
+        const prod = {{ product | safe}}
+        const blockCatalog = document.querySelector('.block-catalog');
+
+        class ProductP{
+            constructor(id, name, price, description, img1, img2, img3){
+                this.id = id;
+                this.name = name;
+                this.price = price;
+                this.description = description;
+                this.img1 = img1;
+                this.img2 = img2;
+                this.img3 = img3;
+            }
+        }
+
+        const Product = (prod)=>{
+            blockCatalog.innerHTML = '';
+            for(var i = 0; i < prod.length; i++){
+                var element = prod[i];
+                var cartBlock =  document.createElement('div');
+                cartBlock.className = 'cart';
+                cartBlock.innerHTML = '<div class="product-cart" style="background-image: url('+ element.img1 +')">' +
+                    '<div class="editor" data-id = "'+ element.id +'">' +
+                        '<ion-icon name="hammer"></ion-icon>' +
+                    '</div>' +
+                '</div>';
+                blockCatalog.appendChild(cartBlock);
+            }
+        }
+
+        Product(prod);
+        document.addEventListener('DOMContentLoaded', ()=>{
+            
+            const editor = document.querySelectorAll('.editor')
+
+
+            const blockCatalog = document.querySelector('.block-catalog');
+
+            var count_id = 1
+
+
+            const ImageSrcReset = ()=>{
+                var Images = document.querySelectorAll('.ImageSrc');
+                Images.forEach(mages =>{
+                    mages.src= ""
+                })
+            }
+
+            const AddProd = (el)=>{
+                
+                editor.forEach( () =>{
+                    count_id++
+                });
+                console.log(count_id)
+
+                var lood = document.querySelector('.ImageSrc:first-child');
+
+                var product = new ProductP(count_id, el.get('prod_name'), el.get('prod_price'), el.get('prod_desc'), lood.src , el.get('img2'), el.get('img3'))
+                console.log(product)
+
+                var cartBlock =  document.createElement('div');
+                        cartBlock.className = 'cart';
+                        cartBlock.innerHTML = '<div class="product-cart" style="background-image: url('+ lood.src +')">' +
+                            '<div class="editor" data-id = "'+ product.id +'">' +
+                                '<ion-icon name="hammer"></ion-icon>' +
+                            '</div>' +
+                        '</div>';
+                        blockCatalog.appendChild(cartBlock);
+                                
+                ImageSrcReset()
+            }
+
+            $(document).ready(function() {
+                $('.btn').click(function(e) {
+                    e.preventDefault();
+
+                    var form = $('#addProductForm')[0];
+                    var formData = new FormData(form);
+                    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+
+                        $.ajax({
+                            method: 'POST',
+                            url: "{% url 'AddProduct' %}",
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            headers: {
+                                'X-CSRFToken': csrfToken
+                            },
+                            success: function(response) {
+                                console.log(response)
+                                count_id = 1
+                                AddProd(formData)
+                                form.reset()
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+
+                });
+            }); 
+
+
+
+                const loadImg = document.querySelector('.loadImg');
+                loadImg.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    const reader = new FileReader();
+            
+                    reader.onload = function(e) {
+                        const dataUrl = e.target.result;
+                        console.log(dataUrl)
+                        document.querySelector('.dataUser-logog').src = dataUrl;
+                        document.querySelector('.img-dataUser-logo').src = dataUrl;
+                        document.querySelector('.load-img-main').style.backgroundImage = "url(" + dataUrl + ")";
+                    };
+                    
+                    reader.readAsDataURL(file);
+                });
+
+            
+
+            const Remove = ()=>{
+                document.querySelector('.block-load-img').classList.remove('open')
+                document.querySelector('.block-load-main').classList.remove('open')
+            }
+
+
+            $(document).ready(function() {
+                $('.LoadButt').click(function(e) {
+                    e.preventDefault();
+            
+                    var formS = $('#load-form')[0];
+                    var formDataS = new FormData(formS);
+                    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+
+                        $.ajax({
+                            method: 'POST',
+                            url: "{% url 'loadPhoto' %}",
+                            data: formDataS,
+                            processData: false,
+                            contentType: false,
+                            headers: {
+                                'X-CSRFToken': csrfToken
+                            },
+                            success: function(response) {
+                                console.log(response)
+                                if(response.success == 'success'){
+                                    console.log('Успешно')
+                                    formS.reset();
+                                    Remove()
+                                }
+
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+            
+                });
+            }); 
+
+        })
+
+    </script>
+
+
+</body>
+</html>
